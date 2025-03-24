@@ -51,25 +51,39 @@
 </div>
 
 <script>
-    // Инициализация TON Connect
+    // Проверяем, что TonConnect доступен, и инициализируем
+    if (typeof TonConnect === 'undefined') {
+        console.error('TonConnect не загружен. Проверьте подключение скрипта.');
+    }
+
     const tonConnect = new TonConnect({
         manifestUrl: 'https://gist.githubusercontent.com/Danya-byte/8736e11dd232567a697cc2fd97debb06/raw/497d2ff94ba84f434e567f23f93a417129d6ab47/HateUsers.json'
     });
 
     async function handlePayment() {
         try {
+            if (!tonConnect) {
+                throw new Error('TON Connect не инициализирован.');
+            }
+
             if (!tonConnect.connected) {
                 await tonConnect.connect();
             }
+
             const provider = tonConnect.provider;
+            if (!provider) {
+                throw new Error('Провайдер кошелька не доступен. Установите TON-совместимый кошелек, например, Tonkeeper.');
+            }
+
             await provider.sendTransaction({
                 to: 'UQDW5V6H3mx3p31qlkEHTkkewiXkqX8wRdOl5F6E0pWMXle4',
-                value: '300000000', 
+                value: '300000000', // 0.3 TON в наноТОН
                 comment: 'HateCaps'
             });
+
             alert('Платеж успешен!');
         } catch (error) {
-            console.error(error);
+            console.error('Ошибка при оплате:', error);
             alert('Платеж не удался: ' + error.message);
         }
     }
