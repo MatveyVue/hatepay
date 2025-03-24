@@ -8,10 +8,20 @@ header {
     background-color: white;
     height: 60px;
     font-family: Geologica;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .htext {
-    position: absolute;
+    margin: 0;
+    font-size: 24px;
+}
+
+#ton-connect {
+    display: flex;
+    align-items: center;
 }
 
 .qrcode {
@@ -39,7 +49,7 @@ header {
     position: absolute;
     top: 180px;
     left: 50%;
-    transform:translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .qrinf {
@@ -51,7 +61,6 @@ header {
 .ssil {
     font-family: Geologica;
 }
-
 
 .tovar {
     background-color: rgb(255, 255, 255);
@@ -109,7 +118,6 @@ header {
     margin-top: 10px;
     margin-left: 20px;
     position: absolute; 
-
 }
 
 .price {
