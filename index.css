@@ -1,0 +1,166 @@
+body {
+    background-color: rgb(239, 239, 239);
+    overflow-x: hidden;
+    touch-action: none;
+    margin: 0;
+}
+
+header {
+    background-color: white;
+    height: 60px;
+    font-family: Geologica;
+}
+
+.htext {
+    position: absolute;
+}
+
+.qrcode {
+    width: 300px;
+    margin-top: 70px;
+}
+
+.container1 {
+    background-color: rgb(255, 255, 255);
+    width: 95%;
+    height: 450px;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px rgba(184, 184, 184, 0.5);
+}
+
+.wall {
+    font-family: Geologica;
+    font-size: 14px;
+    color: rgb(107, 107, 107);
+}
+
+.mon {
+    font-family: Geologica;
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform:translate(-50%, -50%);
+}
+
+.qrinf {
+    font-family: Geologica;
+    font-size: 14px;
+    color: rgb(107, 107, 107);
+}
+
+.ssil {
+    font-family: Geologica;
+}
+
+
+.tovar {
+    background-color: rgb(255, 255, 255);
+    width: 95%;
+    height: 120px;
+    margin-top: 15px;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px rgba(184, 184, 184, 0.5);
+}
+
+.tovart {
+    font-family: Geologica;
+    color: rgb(107, 107, 107);
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.tv {
+    margin-top: 15px;
+    position: absolute;
+    margin-left: -180px;
+}
+
+.infot {
+    font-family: Geologica;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    margin-top: 55px;
+    margin-left: 140px;
+}
+
+.coll {
+    font-family: Geologica;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    margin-top: 55px;
+    margin-left: 320px;
+}
+
+.container2 {
+    background-color: rgb(255, 255, 255);
+    width: 95%;
+    height: 300px;
+    margin-top: 15px;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px rgba(184, 184, 184, 0.5);
+}
+
+.itog {
+    font-family: Geologica;
+    color: rgb(107, 107, 107);
+    margin-top: 10px;
+    margin-left: 20px;
+    position: absolute; 
+
+}
+
+.price {
+    font-family: Geologica;
+    color: rgb(0, 0, 0);
+    margin-top: 40px;
+    position: absolute; 
+    margin-left: 20px;
+}
+
+.adres {
+    font-family: Geologica;
+    color: rgb(107, 107, 107);
+    margin-top: 80px;
+    position: absolute; 
+    margin-left: 20px;
+}
+
+.walletadres {
+    font-family: Geologica;
+    color: rgb(0, 0, 0);
+    margin-top: 110px;
+    position: absolute; 
+    margin-left: 20px;
+}
+
+.сomm {
+    font-family: Geologica;
+    color: rgb(107, 107, 107);
+    margin-top: 175px;
+    position: absolute; 
+    margin-left: 20px;
+}
+
+.comt {
+    font-family: Geologica;
+    color: rgb(0, 0, 0);
+    margin-top: 200px;
+    position: absolute; 
+    margin-left: 20px;
+}
+
+.oplata {
+    background-color: rgb(36, 123, 198);
+    border: none;
+    width: 90%;
+    max-width: 450px;
+    height: 40px;
+    font-family: Geologica;
+    color: white;
+    border-radius: 15px;
+    margin-top: 250px;
+}
