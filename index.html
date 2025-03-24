@@ -12,6 +12,7 @@
 <body>
 <header>
     <h2 class="htext">HatePay</h2>
+    <div id="ton-connect"></div>
 </header>
 <center>
     <h3 class="ssil">Ссылка на оплату в TON</h3>
@@ -43,7 +44,6 @@
         <p class="сomm">Комментарий</p>
         <p class="comt">HateCaps</p>
         <hr style="border: 0.3px solid rgb(223, 223, 223); border-radius: 15px; width: 90%; max-width: 430px; margin-top: 230px; position: absolute; margin-left: 10px;">
-        <div id="ton-connect"></div>
         <button class="oplata" onclick="handlePayment()">Оплатить</button>
     </div>
 </center>
@@ -53,7 +53,6 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Проверяем, что TON_CONNECT_UI доступен
         if (typeof TON_CONNECT_UI === 'undefined') {
             console.error('TON_CONNECT_UI не загружен. Проверьте подключение к https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js');
             alert('Ошибка: TON Connect UI не загружен. Проверьте интернет-соединение.');
@@ -62,7 +61,8 @@
 
         const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             manifestUrl: 'https://gist.githubusercontent.com/Danya-byte/8736e11dd232567a697cc2fd97debb06/raw/497d2ff94ba84f434e567f23f93a417129d6ab47/HateUsers.json',
-            buttonRootId: 'ton-connect'         });
+            buttonRootId: 'ton-connect'
+        });
 
         window.handlePayment = async function() {
             try {
@@ -72,17 +72,16 @@
                     console.log('Подключение кошелька...');
                     await tonConnectUI.connectWallet();
                 }
-
-                const transaction = {
+                                const transaction = {
                     validUntil: Math.floor(Date.now() / 1000) + 360, 
                     messages: [
                         {
                             address: 'UQDW5V6H3mx3p31qlkEHTkkewiXkqX8wRdOl5F6E0pWMXle4',
-                            amount: '300000000', // 0.3 TON в наноTON
+                            amount: '300000000',
                         }
                     ]
                 };
-                                console.log('Отправка транзакции...');
+                console.log('Отправка транзакции...');
                 const result = await tonConnectUI.sendTransaction(transaction);
                 console.log('Транзакция успешно отправлена:', result);
                 alert('Платеж успешен!');
